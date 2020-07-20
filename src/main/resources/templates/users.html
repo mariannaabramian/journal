@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head(~{::head/content()})">
+</head>
+<body class="dx-viewport">
+<div th:replace="layout :: header"></div>
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-2">
+            <div th:replace="left :: left"></div>
+<!--            <nav class="nav flex-column">-->
+<!--                <a class="nav-link" th:href="@{/account}">Учетная запись</a>-->
+<!--                <a class="nav-link" th:href="@{/documents}">Документы</a>-->
+<!--                <a class="nav-link" th:href="@{/users}">Пользователи</a>-->
+<!--                <a class="nav-link" th:href="@{/guide}">Руководство пользователя</a>-->
+<!--                <a class="nav-link" th:href="@{/support}">Служба поддержки</a>-->
+<!--                <a class="nav-link" th:href="@{/exit}">Выход</a>-->
+<!--            </nav>-->
+
+        </div>
+        <div class="col-10">
+
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Главная</a></li>
+                    <li class="breadcrumb-item"><a href="#">Пользователи</a></li>
+                </ol>
+            </nav>
+
+            <div th:if="${success}"
+                 class="row alert alert-success alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert"
+                        aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <span th:text="${success}"></span>
+            </div>
+
+            <!--    <div id="buttonContainer"></div>-->
+
+            <div id="toolbar">
+                <!--                <a th:href="@{/documents/add}" class="btn btn-secondary">-->
+                <!--                    <span class="fa fa-user-plus"></span> Добавить-->
+                <!--                </a>-->
+
+
+                <a th:href="@{/usres/add}"  class="btn btn-light btn-sm" role="button" aria-pressed="true">Добавить</a>
+            </div>
+
+            <br>
+
+            <div class="demo-container">
+                <div id="gridContainer"></div>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+
+<div th:replace="layout :: footer"></div>
+
+
+<script>
+
+
+
+    $(function () {
+        $("#gridContainer").dxDataGrid({
+            dataSource: "/all/users",
+            // sorting: {
+            //     mode: "multiple"
+            // },
+            filterRow: {
+                visible: true,
+                applyFilter: "auto"
+            },
+            // editing: {
+            //     mode: "row",
+            //     allowUpdating: true,
+            //     allowAdding: true
+            // },
+            columns: [
+                {
+                    dataField: "id",
+                    caption: "№",
+                    width: 50,
+                    sortOrder: "asc"
+                },
+                {
+                    dataField: "username",
+                    caption: "login",
+                    width: 130
+                },
+                {
+                    dataField: "firstName",
+                    caption: "Имя",
+                },
+                {
+                    dataField: "lastName",
+                    caption: "Фамилия"
+                },
+                {
+                    dataField: "status",
+                    caption: "Статус"
+                },
+                {
+                    dataField: "registrationDate",
+                    caption: "Дата загрузки"
+                },
+            ],
+            showBorders: true,
+            paging: {
+                pageSize: 10
+            },
+            headerFilter: {
+                visible: true,
+                allowSearch: true
+            },
+            pager: {
+                showPageSizeSelector: true,
+                allowedPageSizes: [5, 10, 20],
+                showInfo: true
+            },
+
+
+            // onEditingStart: function (e) {
+            //     logEvent("EditingStart");
+            // },
+            // onInitNewRow: function (e) {
+            //     logEvent("InitNewRow");
+            // },
+            // onRowInserting: function (e) {
+            //     logEvent("RowInserting");
+            // },
+            // onRowInserted: function (e) {
+            //     logEvent("RowInserted");
+            // },
+            // // onRowUpdating: function (e) {
+            // //     logEvent("RowUpdating");
+            // // },
+            // onRowUpdated: function (e) {
+            //     logEvent("RowUpdated");
+            // }
+        });
+
+
+        function logEvent(st) {
+            alert(st);
+        };
+
+    });
+
+
+</script>
+
+
+</body>
+</html>

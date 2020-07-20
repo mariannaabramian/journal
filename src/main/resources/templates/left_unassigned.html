@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<div th:fragment="left">
+    <nav class="nav flex-column">
+        <a class="nav-link" th:href="@{/}">Главная</a>
+        <a class="nav-link" th:href="@{/about}">О программе</a>
+        <a class="nav-link" th:href="@{/guide}">Руководство пользователя</a>
+        <a class="nav-link" th:href="@{/support}">Служба поддержки</a>
+        <a class="nav-link" th:href="@{/logout}">Войти</a>
+    </nav>
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head th:replace="layout :: head(~{::head/content()})">
+</head>
+<body class="dx-viewport">
+
+<nav th:replace="layout :: header"></nav>
+
+
+<div class="container main-content list ">
+    <h4 class="mt-5">Document history:</h4>
+    <p>Document ID: <span th:text="${document.getId()}"></span></p>
+
+    <table id="table" data-toolbar="#toolbar" class="table table-sm table-striped"
+           data-toggle="table"
+           data-pagination="true"
+           data-filter-control="true"
+           data-show-export="true"
+           data-export-types="['csv','excel','xlsx']">
+        <thead>
+        <tr>
+            <th data-field="count" data-sortable="true" data-filter-control="input">Action ID</th>
+            <th data-field="username" data-sortable="true" data-filter-control="input">ФИО инспектора</th>
+            <th data-field="status" data-sortable="true" data-filter-control="select">Статус</th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="journalItem : ${history}">
+            <td class="tr-class-1" th:text="${journalItem.getId()}"></td>
+            <td class="tr-class-1" th:text="${journalItem.getDocStatusName()}"></td>
+            <td class="tr-class-1" th:text="${journalItem.getInspectorFIO()}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div th:replace="layout :: footer"></div>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<!--<script th:src="@{/webjars/jquery/jquery.min.js}"></script>-->
+<!--<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>-->
+<!--<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>-->
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head(~{::head/content()})">
+</head>
+<body class="dx-viewport">
+<div th:replace="layout :: header"></div>
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-2">
+
+<!--            <div  th:if="${assigned}">-->
+<!--                <div th:replace="left :: left"></div>-->
+<!--            </div>-->
+
+<!--            <div  th:if="${!assigned}">-->
+<!--                <div th:replace="left_unassigned :: left"></div>-->
+<!--            </div>-->
+
+            <div th:replace="left :: left"></div>
+
+        </div>
+        <div class="col-10">
+
+            <div clas="row">
+
+
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Главная</a></li>
+                        <li class="breadcrumb-item"><a href="#">О программе</a></li>
+                    </ol>
+                </nav>
+
+
+                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu augue ex. Curabitur justo ligula, laoreet a orci quis, vestibulum molestie purus. Ut sit amet ipsum mollis, iaculis orci ut, iaculis tellus. Integer vitae velit a felis tincidunt volutpat et sit amet felis. Mauris consequat sit amet felis dictum placerat. Nunc mollis magna at neque malesuada, sed porta ligula sodales. Praesent imperdiet neque augue, eu maximus risus sodales vitae.</p>
+
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+
+
+<div th:replace="layout :: footer"></div>
+
+
+</body>
+</html>

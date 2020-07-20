@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head(~{::head/content()})">
+</head>
+<body class="dx-viewport">
+<div th:replace="layout :: header"></div>
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-2">
+            <div th:replace="left :: left"></div>
+
+
+        </div>
+        <div class="col-10">
+
+
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Главная</a></li>
+                    <li class="breadcrumb-item"><a href="#">Документы</a></li>
+                </ol>
+            </nav>
+
+
+            <div th:if="${success}"
+                 class="row alert alert-success alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert"
+                        aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <span th:text="${success}"></span>
+            </div>
+
+            <!--    <div id="buttonContainer"></div>-->
+
+            <div id="toolbar">
+<!--                <a th:href="@{/documents/add}" class="btn btn-secondary">-->
+<!--                    <span class="fa fa-user-plus"></span> Добавить-->
+<!--                </a>-->
+
+
+                <a th:href="@{/documents/add}"  class="btn btn-light btn-sm" role="button" aria-pressed="true">Добавить</a>
+            </div>
+
+            <br>
+
+            <div class="demo-container">
+                <div id="gridContainer"></div>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+
+<div th:replace="layout :: footer"></div>
+
+
+<script>
+
+
+
+    $(function () {
+        $("#gridContainer").dxDataGrid({
+            dataSource: "/all/documents",
+            // sorting: {
+            //     mode: "multiple"
+            // },
+            filterRow: {
+                visible: true,
+                applyFilter: "auto"
+            },
+            // editing: {
+            //     mode: "row",
+            //     allowUpdating: true,
+            //     allowAdding: true
+            // },
+            columns: [
+                {
+                    dataField: "id",
+                    caption: "№",
+                    width: 50,
+                    sortOrder: "asc"
+                },
+                {
+                    dataField: "docType",
+                    caption: "Тип документа",
+                    width: 130
+                },
+                {
+                    dataField: "importerName",
+                    caption: "Импортер",
+                },
+                {
+                    dataField: "importerDocumentNumber",
+                    caption: "Номер документа"
+                },
+                {
+                    dataField: "inspectorFIO",
+                    caption: "Инспектор"
+                },
+                {
+                    dataField: "status",
+                    caption: "Статус"
+                },
+                {
+                    dataField: "loadDate",
+                    caption: "Дата загрузки"
+                },
+                {
+                    dataField: "registrationNumber",
+                    caption: "Регистрационный номер"
+                }
+            ],
+            showBorders: true,
+            paging: {
+                pageSize: 10
+            },
+            headerFilter: {
+                visible: true,
+                allowSearch: true
+            },
+            pager: {
+                showPageSizeSelector: true,
+                allowedPageSizes: [5, 10, 20],
+                showInfo: true
+            },
+
+
+            // onEditingStart: function (e) {
+            //     logEvent("EditingStart");
+            // },
+            // onInitNewRow: function (e) {
+            //     logEvent("InitNewRow");
+            // },
+            // onRowInserting: function (e) {
+            //     logEvent("RowInserting");
+            // },
+            // onRowInserted: function (e) {
+            //     logEvent("RowInserted");
+            // },
+            // // onRowUpdating: function (e) {
+            // //     logEvent("RowUpdating");
+            // // },
+            // onRowUpdated: function (e) {
+            //     logEvent("RowUpdated");
+            // }
+        });
+
+
+        function logEvent(st) {
+            alert(st);
+        };
+
+    });
+
+
+</script>
+
+
+</body>
+</html>

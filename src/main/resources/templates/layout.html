@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head(content)">
+
+    <!-- Required Bootstrap meta tags -->
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!-- My CSS-->
+    <link th:rel="stylesheet" th:href="@{/css/style.css} "/>
+
+    <!-- jQuery library-->
+    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+
+    <!-- Bootstrap themes -->
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css} "/>
+    <link th:rel="stylesheet" th:href="@{/webjars/font-awesome/css/all.css} "/>
+    <!--    <link th:rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>-->
+
+    <!-- Bootstrap library-->
+    <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+
+    <!--    DevExtreme themes -->
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/20.1.4/css/dx.common.css">
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/20.1.4/css/dx.light.css">
+
+    <!--     DevExtreme -->
+    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/20.1.4/js/dx.all.js"></script>
+
+    <th:block th:replace="${content} ?: ~{}"/>
+
+</head>
+<body>
+
+<header th:insert="header.html :: header"></header>
+
+
+
+<footer th:insert="footer.html :: footer"></footer>
+
+
+
+</body>
+</html>

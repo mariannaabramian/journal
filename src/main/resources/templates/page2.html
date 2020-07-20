@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head(~{::head/content()})">
+</head>
+<body class="dx-viewport">
+<div th:replace="layout :: header"></div>
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-2">
+            <div th:replace="left :: left"></div>
+<!--            <nav class="nav flex-column">-->
+<!--                <a class="nav-link" th:href="@{/account}">Учетная запись</a>-->
+<!--                <a class="nav-link" th:href="@{/documents}">Документы</a>-->
+<!--                <a class="nav-link" th:href="@{/users}">Пользователи</a>-->
+<!--                <a class="nav-link" th:href="@{/guide}">Руководство пользователя</a>-->
+<!--                <a class="nav-link" th:href="@{/support}">Служба поддержки</a>-->
+<!--                <a class="nav-link" th:href="@{/exit}">Выход</a>-->
+<!--            </nav>-->
+        </div>
+        <div class="col-10">
+
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Главная</a></li>
+                    <li class="breadcrumb-item"><a href="#">...</a></li>
+                </ol>
+            </nav>
+
+            <h4>  Заголовок  </h4>
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu augue ex. Curabitur justo ligula, laoreet a orci quis, vestibulum molestie purus. Ut sit amet ipsum mollis, iaculis orci ut, iaculis tellus. Integer vitae velit a felis tincidunt volutpat et sit amet felis. Mauris consequat sit amet felis dictum placerat. Nunc mollis magna at neque malesuada, sed porta ligula sodales. Praesent imperdiet neque augue, eu maximus risus sodales vitae.</p>
+
+            <p>Mauris hendrerit orci ante, nec semper leo ornare non. Integer nec mauris leo. Maecenas imperdiet pulvinar orci, vel cursus ipsum. Aliquam est urna, lacinia sed turpis vitae, finibus tempus diam. Nunc in dictum est. Integer venenatis ligula libero, ac malesuada leo malesuada eget. Vestibulum quis velit enim. Donec porta libero orci, id accumsan nunc condimentum at. Mauris pharetra urna a pharetra tempus. Aenean a nulla hendrerit metus tempus ornare. Sed semper in felis eu congue. Nulla in nisi porttitor, fermentum erat nec, dapibus leo. Praesent finibus dictum imperdiet. Nullam eget ligula ligula. Mauris posuere aliquet lacus at lobortis.</p>
+
+            <p>Nam sem tortor, tristique sed urna nec, blandit tristique ligula. Cras condimentum, justo sed lobortis ornare, sapien metus bibendum arcu, at mattis felis nulla quis sem. Fusce in tortor eu mauris volutpat malesuada non eget leo. Nulla enim metus, vehicula non ipsum a, feugiat lobortis felis. Donec mi risus, egestas non rutrum id, gravida eget mauris. Vivamus semper tincidunt ultrices. Phasellus arcu risus, tempus nec sollicitudin ac, rhoncus tincidunt nulla.</p>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+
+<div th:replace="layout :: footer"></div>
+
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout :: head(~{::head/content()})">
+</head>
+
+<body class="dx-viewport">
+<nav th:replace="layout :: header"></nav>
+
+<div class="container-fluid">
+    <br>
+<!--    <form id="registrationForm" action="/user/register" th:action="@{/registration}" th:object="${user}"-->
+    <form id="loginForm"  th:action="@{/submit-login-form}" method="POST">
+        <div class="form-group">
+            <label>Логин</label>
+            <input type="text" name="usernameField" class="form-control"/>
+        </div>
+
+        <div class="form-group">
+            <label>Пароль</label>
+            <input type="password" name="passwordField" class="form-control"/>
+        </div>
+
+
+        <div>
+            <button type="submit" id="btnSubmit" class="btn btn-light btn-lg">Войти</button>
+        </div>
+
+    </form>
+
+
+</div>
+
+<div th:replace="layout :: footer"></div>
+
+</body>
+
+</html>

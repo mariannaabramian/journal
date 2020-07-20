@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="header">
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">
+            <img th:src="@{img/Logo.png}" alt="">
+            Журнал документов таможни</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/login-page">Войти</a>
+                </li>
+
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href="login">Выйти</a>-->
+<!--                </li>-->
+
+
+            </ul>
+        </div>
+    </nav>
+
+
+<!--    <ul class="nav nav-tabs">-->
+<!--        <li class="nav-item">-->
+<!--            <a class="nav-link active" href="#">Пользователи</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--            <a class="nav-link" href="#">Документы</a>-->
+<!--        </li>-->
+<!--    </ul>-->
+
+
+<!--    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">-->
+
+<!--        <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+<!--            <ul class="navbar-nav mr-auto">-->
+<!--                <li class="nav-item active">-->
+<!--                    <a class="nav-link" th:href="@{/}">Главная</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" th:href="@{/documents}">Документы <span class="sr-only">(current)</span></a>-->
+<!--                </li>-->
+<!--                <li class="nav-item ">-->
+<!--                    <a class="nav-link" th:href="@{/users}">Пользователи </a>-->
+<!--                </li>-->
+
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" th:href="@{/about}">Руководство пользователя</a>-->
+<!--                </li>-->
+<!--                &lt;!&ndash;                <li class="nav-item">&ndash;&gt;-->
+<!--                &lt;!&ndash;                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>&ndash;&gt;-->
+<!--                &lt;!&ndash;                </li>&ndash;&gt;-->
+<!--            </ul>-->
+
+<!--        </div>-->
+<!--    </nav>-->
+<!--</div>-->
+
+
+<!--    <div class="nav-scroller py-1 mb-2">-->
+<!--        <nav class="nav d-flex bg-dark">-->
+<!--            <a class="nav-item " href="#">Документы</a>-->
+<!--            <a class="nav-item " href="#">Пользователи</a>-->
+<!--        </nav>-->
+<!--    </div>-->
+
+</div>
+
+</body>
+</html>
