@@ -91,11 +91,11 @@
             <version>${oracle.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.microsoft.sqlserver</groupId>
-            <artifactId>mssql-jdbc</artifactId>
-            <version>8.2.2.jre11</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.microsoft.sqlserver</groupId>-->
+<!--            <artifactId>mssql-jdbc</artifactId>-->
+<!--            <version>8.2.2.jre11</version>-->
+<!--        </dependency>-->
 
 
         <!-- bootstrap and jquery -->
@@ -146,6 +146,12 @@
             <version>2.11.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
 
     </dependencies>
 
@@ -158,6 +164,9 @@
             </plugin>
         </plugins>
     </build>
+
+
+
 
 
 </project>
