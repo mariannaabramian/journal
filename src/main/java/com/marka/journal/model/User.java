@@ -2,12 +2,17 @@ package com.marka.journal.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Date;
 import java.util.List;
 
 @Entity
 @Table(name = "Users")
-public class User {
+public class
+
+
+User {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_generator")
     @SequenceGenerator(name = "user_generator", sequenceName = "S_USERS", allocationSize = 1)
@@ -29,15 +34,20 @@ public class User {
     @Column
     private String lastName;
 
-    @Enumerated(EnumType.ORDINAL)
-    private Status status;
+    @Enumerated(EnumType.STRING)
+    private UserStatus status;
+
+    @Column
+    @Max(1000000)
+    @PositiveOrZero
+    private int bonusScore;
 
     @ManyToMany(fetch = FetchType.EAGER)
     private List<Role> roles;
 
     @Temporal(TemporalType.TIMESTAMP)
     @PastOrPresent
-    private Date registrationDate = new Date();
+    private Date registrationDate;
 
     public String formFIO(){ return this.lastName+' '+this.firstName;}
 
@@ -65,12 +75,22 @@ public class User {
         this.lastName = lastName;
     }
 
-    public Status getUserStatus() {
-        return status;
+
+    public String getEncodedPassword() {
+        return encodedPassword;
     }
 
-    public void setUserStatus(Status status) {
-        this.status = status;
+    public void setEncodedPassword(String encodedPassword) {
+        this.encodedPassword = encodedPassword;
+    }
+
+
+    public List<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
     }
 
     public Date getRegistrationDate() {
@@ -81,27 +101,19 @@ public class User {
         this.registrationDate = registrationDate;
     }
 
-    public String getEncodedPassword() {
-        return encodedPassword;
-    }
-
-    public void setEncodedPassword(String encodedPassword) {
-        this.encodedPassword = encodedPassword;
-    }
-
-    public Status getStatus() {
+    public UserStatus getStatus() {
         return status;
     }
 
-    public void setStatus(Status status) {
+    public void setStatus(UserStatus status) {
         this.status = status;
     }
 
-    public List<Role> getRoles() {
-        return roles;
+    public int getBonusScore() {
+        return bonusScore;
     }
 
-    public void setRoles(List<Role> roles) {
-        this.roles = roles;
+    public void setBonusScore(int bonusScore) {
+        this.bonusScore = bonusScore;
     }
 }

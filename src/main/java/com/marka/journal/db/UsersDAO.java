@@ -63,7 +63,7 @@ public class UsersDAO {
 
     @Transactional
     public void banUser(User user) {
-        user.setUserStatus(Status.BANNED);
+        user.setStatus(UserStatus.BANNED);
     }
 
     @Transactional

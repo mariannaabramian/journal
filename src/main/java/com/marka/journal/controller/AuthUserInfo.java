@@ -22,7 +22,10 @@ public class AuthUserInfo {
         if (principal != null) {
             authenticated = true;
             login = principal.getName();
-            this.user = usersRep.findByLogin(login);
+            user_ = usersRep.findByLogin(login);
+            this.login = user_.getLogin();
+            this.fio = user_.formFIO();
+//            this.user = usersRep.findByLogin(login);
 
         } else {
             authenticated = false;
@@ -33,6 +36,8 @@ public class AuthUserInfo {
     private Principal principal;
     private boolean authenticated;
     private User user;
+    private String login;
+    private String fio;
 
     public boolean isAuthenticated() {
         return authenticated;
@@ -48,5 +53,21 @@ public class AuthUserInfo {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getFio() {
+        return fio;
+    }
+
+    public void setFio(String fio) {
+        this.fio = fio;
     }
 }
